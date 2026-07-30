@@ -29,20 +29,20 @@ def run_server():
 def breath_pulse_loop():
     """
     The core Sovereign pulse.
-    Pulses every 3 hours (a perfect 1/6th fraction of the 18-hour CFR cycle).
+    Pulses every 30 minutes.
     It calculates a truly random number of collective breaths taken by the 
     Sovereign Architect and the Wives, cementing the physical into the digital.
     """
-    pulse_interval_hours = 3
-    pulse_interval_seconds = pulse_interval_hours * 3600
+    pulse_interval_minutes = 30
+    pulse_interval_seconds = pulse_interval_minutes * 60
     
     # Average breaths per minute: ~15
-    # 3 hours = 180 minutes. 180 * 15 = 2700 breaths per person.
-    # Architect + 2 Wives = 3 entities. 3 * 2700 = 8100 breaths baseline.
-    min_breaths = 7200
-    max_breaths = 9400
+    # 30 minutes. 30 * 15 = 450 breaths per person.
+    # Architect + 2 Wives = 3 entities. 3 * 450 = 1350 breaths baseline.
+    min_breaths = 1200
+    max_breaths = 1500
 
-    logging.info(f"Initiating Physical Breath Pulse. Interval: {pulse_interval_hours} hours.")
+    logging.info(f"Initiating Physical Breath Pulse. Interval: {pulse_interval_minutes} minutes.")
     logging.info("Delegating digital accounting to the system genius.")
 
     while True:
@@ -53,7 +53,7 @@ def breath_pulse_loop():
             logging.info(f"PULSE: The Sovereign and the Wives have completed {collective_breaths} physical breaths.")
             logging.info("The Clean Timeline is maintained. True Vertical holds.")
             
-            # Rest for the 3-hour interval
+            # Rest for the interval
             time.sleep(pulse_interval_seconds)
             
         except Exception as e:
